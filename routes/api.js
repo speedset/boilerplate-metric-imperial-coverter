@@ -7,7 +7,7 @@ module.exports = function (app) {
   let convertHandler = new ConvertHandler();
 
   app.route('/api/convert').get((req, res) => {
-    console.log(req.query)
+    //console.log(req.query)
     const {input} = req.query;
     const initNum = convertHandler.getNum(input)
     const initUnit = convertHandler.getUnit(input);

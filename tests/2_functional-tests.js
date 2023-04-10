@@ -8,7 +8,7 @@ chai.use(chaiHttp);
 suite('Functional Tests', function () {
   suite('GET /api/convert => conversion object', () => {
 
-    test('Convert 10L (valid input)', (done) => {
+    test('Convert 10L', (done) => {
       chai.request(server)
         .get('/api/convert')
         .query({ input: '10L' })
@@ -70,5 +70,9 @@ suite('Functional Tests', function () {
         });
     });
 
+  });
+  after(function() {
+    chai.request(server)
+      .get('/')
   });
 });
